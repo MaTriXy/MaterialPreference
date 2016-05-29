@@ -23,7 +23,7 @@ public class MainActivity extends MaterialPreferenceActivity implements Material
         setToolbarTitle("My Toolbar");
 
         //set primary color
-        setPrimaryColor(MaterialPrefUtil.COLOR_TEAL);
+        setPrimaryColor(MaterialPrefUtil.COLOR_BLUE_GREY);
 
         //default secondary color for tinting widgets, if no secondary color is used yet
         setDefaultSecondaryColor(this, MaterialPrefUtil.COLOR_BLUE);
@@ -47,6 +47,6 @@ public class MainActivity extends MaterialPreferenceActivity implements Material
      */
     @Override
     public void onPreferenceSettingsChanged(SharedPreferences sharedPreferences, String name) {
-        Toast.makeText(this, "preference with key " + name + "changed", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "preference with key " + name + " changed", Toast.LENGTH_LONG).show();
     }
 }

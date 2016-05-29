@@ -19,10 +19,13 @@ package com.codevscolor.materialpreference.activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.codevscolor.materialpreference.callback.MaterialPreferenceCallback;
 import com.codevscolor.materialpreference.R;
@@ -111,7 +114,7 @@ public class MaterialMainActivity extends AppCompatActivity {
 
 
     public void setColorPickerKey(String key) {
-
+        MaterialPrefUtil.setSecondaryColorKey(key);
     }
 
 
@@ -128,6 +131,12 @@ public class MaterialMainActivity extends AppCompatActivity {
 
         mToolbar.setTitle(mToolbarTitle);
         mToolbar.setBackgroundColor(Color.parseColor(MaterialPrefUtil.primaryColor[MaterialPrefUtil.getPrimaryColorPosition()]));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.parseColor(MaterialPrefUtil.primaryColorDark[MaterialPrefUtil.getPrimaryColorPosition()]));
+        }
 
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

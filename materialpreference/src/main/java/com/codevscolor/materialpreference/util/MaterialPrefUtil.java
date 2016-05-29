@@ -41,6 +41,7 @@ public class MaterialPrefUtil {
     //application package name
     private static String mPackageName = null;
 
+    private static String mSecondaryColorKey;
 
     //color lists
     public static final int COLOR_RED = 0;
@@ -136,7 +137,13 @@ public class MaterialPrefUtil {
         mXmlResName = name;
     }
 
+    public static void setSecondaryColorKey(String key){
+        mSecondaryColorKey = key;
+    }
 
+    public static String getSecondaryColorKey(){
+        return mSecondaryColorKey;
+    }
     /**
      * set parent application package name
      *
@@ -195,6 +202,29 @@ public class MaterialPrefUtil {
             "#795548",//brown
             "#9E9E9E",//grey
             "#607D8B"//blue grey
+    };
+
+    public final static String[] primaryColorDark = new String[]{
+            //700
+            "#D32F2F",//red
+            "#C2185B",//pink
+            "#7B1FA2",//purple
+            "#512DA8",//Deep purple
+            "#303F9F",//Indigo
+            "#1976D2",//blue
+            "#0288D1",//light blue
+            "#0097A7",//cyan
+            "#00796B",//teal
+            "#388E3C",//green
+            "#689F38",//light green
+            "#AFB42B",//lime
+            "#FBC02D",//yellow
+            "#FFA000",//amber
+            "#F57C00",//orange
+            "#E64A19",//deep orange
+            "#5D4037",//brown
+            "#616161",//grey
+            "#455A64"//blue grey
     };
 
 

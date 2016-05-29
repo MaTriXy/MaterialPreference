@@ -152,7 +152,7 @@ public class MaterialPreferenceFragment extends PreferenceFragmentCompat impleme
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
         ((MaterialMainActivity)getActivity()).notifyPreferenceChanged(sharedPreferences,s);
-        if (s.equals("secondary_color_position")) {
+        if (s.equals(MaterialPrefUtil.getSecondaryColorKey())) {
             Intent intent = new Intent(getActivity(), MaterialMainActivity.class);
 
             startActivity(intent);
