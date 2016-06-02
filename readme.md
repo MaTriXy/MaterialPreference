@@ -2,7 +2,7 @@ Material Preference
 ==================
 [![Build Status](https://travis-ci.org/codevscolor/MaterialPreference.svg?branch=master)](https://travis-ci.org/codevscolor/MaterialPreference)
 
-[Report an issue][5]
+[Report an issue][1]
 
 
 This library can be used to implement Material Designed Settings/Preference Screen on Pre-Lollipop devices.
@@ -115,8 +115,11 @@ API level 8 and above
 
 Author
 ------
-Nandan Kaushik Dutta - @codevscolor on GitHub, personal blog : codevscolor.com
+Nandan Kaushik Dutta - @codevscolor on GitHub, personal blog : [codevscolor][2]
 
 License
 -------
 Apache 2.0
+
+[1]: https://github.com/codevscolor/MaterialPreference/issues
+[2]: codevscolor.com
