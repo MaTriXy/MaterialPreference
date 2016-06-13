@@ -1,5 +1,6 @@
 Material Preference
 ==================
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialPreference-green.svg?style=true)](https://android-arsenal.com/details/1/3705)
 [![Build Status](https://travis-ci.org/codevscolor/MaterialPreference.svg?branch=master)](https://travis-ci.org/codevscolor/MaterialPreference)
 
 [Report an issue][1]
