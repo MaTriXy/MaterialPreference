@@ -123,4 +123,4 @@ License
 Apache 2.0
 
 [1]: https://github.com/codevscolor/MaterialPreference/issues
-[2]: codevscolor.com
+[2]: https://codevscolor.com
