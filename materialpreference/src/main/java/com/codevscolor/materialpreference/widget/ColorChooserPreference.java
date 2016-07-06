@@ -39,7 +39,7 @@ import java.util.List;
 public class ColorChooserPreference extends Preference implements ColorChooserCallback {
 
     private AlertDialog mDialog;
-    private Context mContext;
+    private final Context mContext;
 
     public ColorChooserPreference(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -57,6 +57,7 @@ public class ColorChooserPreference extends Preference implements ColorChooserCa
         super.onBindViewHolder(holder);
         //holder.itemView.setClickable(false); // disable parent click
         ImageView imageView = (ImageView) holder.findViewById(R.id.imageViewIcon);
+        //noinspection StatementWithEmptyBody
         if (imageView != null) {
             GradientDrawable gradientDrawable = (GradientDrawable) imageView.getBackground();
             gradientDrawable.setColor(Color.parseColor(MaterialPrefUtil.secondaryColor[MaterialPrefUtil.getSecondaryColorPosition()]));
@@ -72,13 +73,13 @@ public class ColorChooserPreference extends Preference implements ColorChooserCa
         super.onClick();
         final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
-        ColorAdapter adapterColor = null;
+        ColorAdapter colorAdapter;
         List<String> arrayListColor = Arrays.asList(MaterialPrefUtil.secondaryColor);
-        adapterColor = new ColorAdapter(getContext(), arrayListColor, 0, ColorChooserPreference.this);
+        colorAdapter = new ColorAdapter(getContext(), arrayListColor, 0, ColorChooserPreference.this);
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         GridView gridView = (GridView) inflater.inflate(R.layout.dialog_grid, null);
-        gridView.setAdapter(adapterColor);
+        gridView.setAdapter(colorAdapter);
 
         builder.setView(gridView);
 

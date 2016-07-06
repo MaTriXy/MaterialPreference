@@ -20,18 +20,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.preference.PreferenceFragmentCompat;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.codevscolor.materialpreference.R;
 import com.codevscolor.materialpreference.activity.MaterialMainActivity;
 import com.codevscolor.materialpreference.util.MaterialPrefUtil;
 
 
 public class MaterialPreferenceFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
+    private Context myContext;
 
     @Override
     public void onCreatePreferences(Bundle bundle, String s) {
@@ -40,12 +36,11 @@ public class MaterialPreferenceFragment extends PreferenceFragmentCompat impleme
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        final Context myContext = this.getActivity();
+        myContext = this.getActivity();
 
         myContext.setTheme(getTheme(MaterialPrefUtil.getSecondaryColorPosition() + 1));
 
         super.onCreate(savedInstanceState);
-
         addPreferencesFromResource(getResources().getIdentifier(MaterialPrefUtil.getXmlResourceName(), "xml", MaterialPrefUtil.getAppPackageName()));
 
     }
@@ -117,29 +112,11 @@ public class MaterialPreferenceFragment extends PreferenceFragmentCompat impleme
 
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-    }
-
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
 
     @Override
     public void onResume() {
         super.onResume();
         getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
-
     }
 
     @Override
@@ -151,13 +128,10 @@ public class MaterialPreferenceFragment extends PreferenceFragmentCompat impleme
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
-        ((MaterialMainActivity)getActivity()).notifyPreferenceChanged(sharedPreferences,s);
+        ((MaterialMainActivity)myContext).notifyPreferenceChanged(sharedPreferences,s);
         if (s.equals(MaterialPrefUtil.getSecondaryColorKey())) {
             Intent intent = new Intent(getActivity(), MaterialMainActivity.class);
-
             startActivity(intent);
-            getActivity().finish();
-
             getActivity().overridePendingTransition(0,0);
 
         }

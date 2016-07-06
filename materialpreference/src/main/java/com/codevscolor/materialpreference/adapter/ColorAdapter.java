@@ -33,13 +33,13 @@ import java.util.List;
 
 public class ColorAdapter extends ArrayAdapter<String> {
 
-    private ColorChooserCallback mCallback;
-
+    private final ColorChooserCallback mCallback;
+    private final int secondary_position;
 
     public ColorAdapter(Context mContext, List<String> arrayList, int position, ColorChooserCallback callback) {
         super(mContext, R.layout.dialog_grid_item, arrayList);
         mCallback = callback;
-        //todo add position
+        secondary_position = MaterialPrefUtil.getSecondaryColorPosition();
     }
 
 
@@ -54,6 +54,9 @@ public class ColorAdapter extends ArrayAdapter<String> {
 
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 
+        if(secondary_position == position){
+            imageView.setImageResource(R.drawable.mpref_done);
+        }
 
         GradientDrawable gradientDrawable = (GradientDrawable) imageView.getBackground();
         gradientDrawable.setColor(Color.parseColor(getItem(position)));

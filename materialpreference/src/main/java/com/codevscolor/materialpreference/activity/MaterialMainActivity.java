@@ -21,19 +21,17 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.codevscolor.materialpreference.callback.MaterialPreferenceCallback;
 import com.codevscolor.materialpreference.R;
 import com.codevscolor.materialpreference.fragment.MaterialPreferenceFragment;
 import com.codevscolor.materialpreference.util.MaterialPrefUtil;
 
 
-public class MaterialMainActivity extends AppCompatActivity {
+public class MaterialMainActivity extends BaseActivity {
 
     private Toolbar mToolbar;
 
@@ -43,7 +41,6 @@ public class MaterialMainActivity extends AppCompatActivity {
     //toolbar title text size
     private int mTextSize;
 
-    private MaterialPreferenceCallback mListener;
 
     /**
      * set title for the settings window toolbar
@@ -103,13 +100,9 @@ public class MaterialMainActivity extends AppCompatActivity {
         MaterialPrefUtil.setAppPackageName(name);
     }
 
-    public void setPreferenceChangedListener(MaterialPreferenceCallback listener) {
-        mListener = listener;
-    }
 
     public void notifyPreferenceChanged(SharedPreferences preferences, String name) {
-        if (mListener != null)
-            mListener.onPreferenceSettingsChanged(preferences, name);
+        super.notifyPreferenceChanged(preferences,name);
     }
 
 

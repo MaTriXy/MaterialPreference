@@ -16,24 +16,23 @@
 
 package com.codevscolor.materialpreference.activity;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.content.SharedPreferences;
+import android.support.v7.app.AppCompatActivity;
 
-public abstract class MaterialPreferenceActivity extends MaterialMainActivity{
+import com.codevscolor.materialpreference.callback.MaterialPreferenceCallback;
 
+public class BaseActivity extends AppCompatActivity {
+    private static MaterialPreferenceCallback mListener = null;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        init(savedInstanceState);
-        super.onCreate(savedInstanceState);
+    public void setPreferenceChangedListener(MaterialPreferenceCallback listener) {
+        if(mListener == null)
+            mListener = listener;
     }
 
-
-    /**
-     * abstract method init to initialize
-     */
-    public abstract void init(@Nullable Bundle savedInstanceState);
-
-
+    public void notifyPreferenceChanged(SharedPreferences preferences, String name){
+        if(mListener != null){
+            mListener.onPreferenceSettingsChanged(preferences, name);
+        }
+    }
 
 }
