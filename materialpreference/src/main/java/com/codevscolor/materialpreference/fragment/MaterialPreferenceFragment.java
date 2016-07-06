@@ -132,6 +132,7 @@ public class MaterialPreferenceFragment extends PreferenceFragmentCompat impleme
         if (s.equals(MaterialPrefUtil.getSecondaryColorKey())) {
             Intent intent = new Intent(getActivity(), MaterialMainActivity.class);
             startActivity(intent);
+            getActivity().finish();
             getActivity().overridePendingTransition(0,0);
 
         }
