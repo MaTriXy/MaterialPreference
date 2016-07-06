@@ -32,7 +32,7 @@ Download
 
 ```
 dependencies {
-compile 'com.codevscolor.materialpreference:mp:0.1'
+compile 'com.codevscolor.materialpreference:mp:0.2.1'
 }
 ```
 
