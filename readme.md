@@ -1,13 +1,13 @@
 Material Preference
 ==================
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialPreference-green.svg?style=true)](https://android-arsenal.com/details/1/3705)
-[![Build Status](https://travis-ci.org/codevscolor/MaterialPreference.svg?branch=master)](https://travis-ci.org/codevscolor/MaterialPreference)
+[![CircleCI](https://circleci.com/gh/codevscolor/MaterialPreference.svg?style=svg)](https://circleci.com/gh/codevscolor/MaterialPreference)
 
 [Report an issue][1]
 
 
 This library can be used to implement Material Designed Settings/Preference Screen on Pre-Lollipop devices.
-(Currently supporting devices upto api 8 )
+(Currently supporting devices upto api 9 )
 
 - Material Preference Library uses `com.android.support:preference-v7:x.x.x` support library widgets.
 - Also it includes a color chooser dialog widget, that can be used to select accent color .
