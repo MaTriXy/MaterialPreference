@@ -21,10 +21,14 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.codevscolor.materialpreference.R;
 import com.codevscolor.materialpreference.fragment.MaterialPreferenceFragment;
@@ -39,7 +43,7 @@ public class MaterialMainActivity extends BaseActivity {
     private static String mToolbarTitle;
 
     //toolbar title text size
-    private int mTextSize;
+    private float mTextSize = -1;
 
 
     /**
@@ -123,6 +127,26 @@ public class MaterialMainActivity extends BaseActivity {
         mToolbar = (Toolbar) findViewById(R.id.materialpref_toolbar);
 
         mToolbar.setTitle(mToolbarTitle);
+
+        //use different text size
+        TextView textview = new TextView(this);
+
+        Toolbar.LayoutParams layoutparams = new Toolbar.LayoutParams(Toolbar.LayoutParams.MATCH_PARENT, Toolbar.LayoutParams.WRAP_CONTENT);
+
+        textview.setLayoutParams(layoutparams);
+
+        textview.setText(mToolbarTitle);
+
+        textview.setTextColor(Color.MAGENTA);
+
+        textview.setGravity(Gravity.LEFT);
+
+        textview.setTextSize(mTextSize);
+
+        mToolbar.addView(textview);
+
+
+
         mToolbar.setBackgroundColor(Color.parseColor(MaterialPrefUtil.primaryColor[MaterialPrefUtil.getPrimaryColorPosition()]));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
