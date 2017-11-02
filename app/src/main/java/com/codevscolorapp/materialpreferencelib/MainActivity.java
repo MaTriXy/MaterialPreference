@@ -3,6 +3,7 @@ package com.codevscolorapp.materialpreferencelib;
 import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.codevscolor.materialpreference.activity.MaterialPreferenceActivity;
@@ -49,4 +50,11 @@ public class MainActivity extends MaterialPreferenceActivity implements Material
     public void onPreferenceSettingsChanged(SharedPreferences sharedPreferences, String name) {
         Toast.makeText(this, "preference with key " + name + " changed", Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(0, 0);
+    }
+
 }

@@ -116,7 +116,7 @@ API level 8 and above
 
 Author
 ------
-Nandan Kaushik Dutta - @codevscolor on GitHub, personal blog : [codevscolor][2]
+codevscolor - @codevscolor on GitHub, personal blog : [codevscolor][2]
 
 License
 -------

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MaterialPreferenceLib</string>
+    <string name="title_activity_launcher">LauncherActivity</string>
 </resources>

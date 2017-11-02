@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Nandan Kaushik Dutta
+ * Copyright (C) 2016 codevscolor
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 
 /**
- * Created by nandan on 14/03/16.
+ * Created by codevscolor on 14/03/16.
  * Utility class for handling color and themes
  */
 public class MaterialPrefUtil {

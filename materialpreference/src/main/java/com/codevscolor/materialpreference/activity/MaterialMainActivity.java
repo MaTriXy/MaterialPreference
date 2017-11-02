@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Nandan Kaushik Dutta
+ * Copyright (C) 2016 codevscolor
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ public class MaterialMainActivity extends BaseActivity {
      * @param position :: integer value of color defined in {@link MaterialPrefUtil}
      */
     public void setDefaultSecondaryColor(Context context, int position) {
-        MaterialPrefUtil.setSecondaryColorPosition(context,position);
+        MaterialPrefUtil.setSecondaryColorPosition(context, position);
     }
 
 
@@ -102,7 +102,7 @@ public class MaterialMainActivity extends BaseActivity {
 
 
     public void notifyPreferenceChanged(SharedPreferences preferences, String name) {
-        super.notifyPreferenceChanged(preferences,name);
+        super.notifyPreferenceChanged(preferences, name);
     }
 
 
@@ -139,6 +139,7 @@ public class MaterialMainActivity extends BaseActivity {
                 .replace(R.id.materialpref_bodylayout, new MaterialPreferenceFragment())
                 .commit();
     }
+
 
 
     @Override
